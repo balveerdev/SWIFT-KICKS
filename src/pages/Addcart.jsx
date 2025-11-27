@@ -109,7 +109,7 @@ const finalAmount = subtotal - totalDiscount;
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full max-w-[1200px] mx-auto border-collapse">
-              <thead className="bg-[#888686] text-left hidden md:table-header-group">
+              <thead className="bg-[#fff] border border-gray-200 text-left shadow-md hidden md:table-header-group">
                 <tr>
                   <th className="p-3 pl-8">Product</th>
                   <th className="p-3 text-center">Quantity</th>
@@ -162,11 +162,11 @@ const finalAmount = subtotal - totalDiscount;
                         ₹{(parsePrice(product.price) * cart[product.id]).toFixed(2)}
                       </div>
 
-                      <div className="font-semibold text-green-600">
+                      {/* <div className="font-semibold text-green-600">
                          {(
                           (parsePrice(product.price) * (cart[product.id] || 0) * parseDiscount(product.discount)) / 100
                         ).toFixed(2)}
-                      </div>
+                      </div> */}
 
                 
                       {/* Remove Button */}
@@ -228,7 +228,7 @@ const finalAmount = subtotal - totalDiscount;
                     </button>
                      <button
                        onClick={() => handleBuyNow(product)}
-                       className="bg-[#5ffb40] text-white text-xs ml-6 px-3 py-1 w-[80px] rounded-full hover:bg-white hover:text-black border border-black transition"
+                       className="bg-black hover:bg-gray-700 text-white text-xs ml-6 px-3 py-1 w-[80px] rounded-md hover:text-black border border-black transition"
                      >
                        Buy
                      </button>
@@ -242,20 +242,49 @@ const finalAmount = subtotal - totalDiscount;
         )}
 
         {cartItems.length > 0 && (
-          <div className="w-full mt-6 max-w-[1200px] mx-auto py-4 flex justify-end items-center">
-        <div className=" w-fit  text-right text-lg  space-y-2 
-                border-l border-r pb-2  border-b border-gray-300  bg-white shadow-sm">
-  <p className='px-5 border-b font-medium border-gray-300 text-[18px]'>Subtotal: ₹{subtotal.toFixed(2)}</p>
-  <p className="text-green-600 font-medium px-5 text-[18px] border-b border-gray-300">Discount %: - ₹{totalDiscount ? totalDiscount.toFixed(2) : "0.00"}</p>
-  <p className=" font-medium  px-5 border-b border-gray-300 text-[18px]">Final Payable: ₹{finalAmount ? finalAmount.toFixed(2) : "0.00"}</p>
+       <div className="w-full mx-auto max-w-[1200px] mt-5 py-4 ">
+  <div className="w-full text-lg  bg-white shadow-sm border-l border-r border-t border-b border-gray-300">
 
-  <button
-    onClick={handleBuyNowAll}
-    className="bg-[#5ffb40] text-white text-sm px-4 mr-1 py-2 rounded-full hover:bg-white hover:text-black border border-black transition"
-  >
-    Buy Now
-  </button>
-</div>
+    {/* Subtotal */}
+    <div className="flex border-b border-gray-300">
+      <span className="w-[100%] px-5 py-2 font-medium text-[18px]">
+        Subtotal
+      </span>
+      <span className="w-[100%] border-l border-gray-300 px-5 py-2 font-medium text-[18px] text-right">
+        ₹{subtotal.toFixed(2)}
+      </span>
+    </div>
+
+    {/* Discount */}
+    <div className="flex border-b border-gray-300">
+      <span className="w-[100%] px-5 py-2 font-medium text-[18px] text-green-600">
+        Discount %
+      </span>
+      <span className="w-[100%] border-l border-gray-300 px-5 py-2 font-medium text-[18px] text-green-600 text-right">
+        ₹{totalDiscount ? totalDiscount.toFixed(2) : "0.00"}
+      </span>
+    </div>
+
+    {/* Final Payable */}
+    <div className="flex border-b border-gray-300">
+      <span className="w-[100%] px-5 py-2 font-medium text-[18px]">
+        Final Payable
+      </span>
+      <span className="w-[100%] border-l border-gray-300 px-5 py-2 font-medium text-[18px] text-right">
+        ₹{finalAmount ? finalAmount.toFixed(2) : "0.00"}
+      </span>
+    </div>
+
+    {/* Button */}
+    <div className="w-full text-end p-2">
+      <button
+        onClick={handleBuyNowAll}
+        className="w-[100px]  md:w-[150px] bg-black hover:bg-gray-800 text-white text-sm px-4 py-2 transition"
+      >
+        Buy Now
+      </button>
+    </div>
+  </div>
 </div>
 
 
