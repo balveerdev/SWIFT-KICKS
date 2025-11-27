@@ -1,0 +1,49 @@
+.mainseccl{
+    background-color: rgba(187, 184, 187, 0.284);
+    position: relative;
+    
+}
+
+.leftpart{
+    float: left;
+    background-color: #fff;
+    width: 535px;
+    height: 650px;
+    left: 0;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.dizmodle{
+    position: absolute;
+}
+
+.SlickPro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px 0px 0px 25px;
+    font-family: sans-serif;
+}
+
+.leftmodle{
+    padding: 70px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.addtitle{
+    font-size:70px;
+    font-weight: bold;
+    line-height: normal;
+    padding-top: 60px;
+}
+
