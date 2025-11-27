@@ -2,18 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-.black-overlay{
-    background-color: rgba(0, 0, 0, 0.7);
+.black-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Hide horizontal scrollbar */
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none;    /* Firefox */
-  }
-  body {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body,
+html {
   overflow-x: hidden;
+  overflow-y: auto !important;
 }
