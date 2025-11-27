@@ -26,7 +26,7 @@ export default function ProductDetail() {
     
       const handleAddToCart = (product) => {
   if (cart[product.id]) {
-    alert("Already in cart!");
+    toast.info("Already in cart!");
     return;
   }
 
@@ -34,7 +34,7 @@ export default function ProductDetail() {
     ...prev,
     [product.id]: 1,
   }));
-  alert("Product added to cart!");
+  toast.success("Product added to cart!");
 };
 
 
