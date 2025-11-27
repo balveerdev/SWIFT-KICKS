@@ -1,6 +1,6 @@
 import Brandslogo from "../components/Brandslogo";
 import Header from "../components/Header";
-import Mainsec from "../components/mainsec";
+import Mainsec from "../components/Mainsec";
 import Category from "../components/Category";
 import Benar from "../components/Benar";
 import Genderpro from "../components/Genderpro";
